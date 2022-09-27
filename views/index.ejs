@@ -1,0 +1,85 @@
+<%- include('partials/head') -%>
+
+<header class="border-bottom theme-dark-bg text-white">
+    <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+        <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+        messages.info.forEach( el => { %>
+        <div class="alert alert-info"><%= el.msg %></div>
+        <% }) %> <% } %>
+    <section class="container row justify-content-between align-items-center min-w-100">
+    <div class="col-2">
+        <h2>Team Plan</h2>
+    </div>
+    <section class="col">
+        <form action="/login" method="POST" class="row justify-content-end align-items-end p-3">
+            <div class=" col-3 mb-2">
+              <label for="exampleInputEmail1" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                name="email"
+              />
+            </div>
+            <div class="col-3 mb-2">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                name="password"
+              />
+            </div>
+            <button type="submit" class="col-1 m-2 btn btn-primary ">Login</button>
+            </form>
+    </section>
+    </section>
+</header>
+
+<main class="container justify-content-center mt-5">
+    <section class="container row justify-content-center align-items-center">
+    <section class="col-5 align-items-center">
+        <h1 class="col-">Keeping your team on the same page has never been so easy.</h1>
+        <p class="mt-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi repellat nesciunt, amet sunt ipsam eius reprehenderit deserunt facere incidunt et saepe mollitia laboriosam. Debitis sapiente facere dignissimos fuga enim assumenda!
+        </p>
+    </section>
+    <div class="row col-5 justify-content-center">
+        <section class="col-9">
+            <h3>Create an account</h3>
+            <span>It's free and always will be.</span>
+            <form action="/signup" method="POST">
+                <div class="my-3">
+                    <label for="userName" class="form-label">User Name</label>
+                    <input type="text" class="form-control" id="userName" name="userName">
+                </div>
+                <div class="my-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+                  </div>
+                <button type="submit" class="btn btn-primary">Create Acount</button>
+              </form>
+        </section>
+    </div>
+    </section>
+</main>
+
+
+<%- include('partials/foot') -%>

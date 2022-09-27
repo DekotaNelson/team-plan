@@ -1,0 +1,29 @@
+<%- include('partials/head') -%>
+<%- include('partials/nav-bar') -%>
+
+<main>
+    <section class="container mt-5">
+        <table class="table table-hover mt-4">
+            <thead class="table-header table-dark">
+                <th scope="col">Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Role</th>
+                <th scope="col">Phone Number</th>
+            </thead>
+            <tbody>
+                <% for(var i=0; i<members.length; i++) {%>
+                    <tr>
+                        <td><a href="/profile/<%= members[i]._id%>" class="text-dark text-decoration-none"><%= user.name %></a></td>
+                        <td><%= user.userName %></td>
+                        <td><%= user.role %></td>
+                        <td><%= user.phoneNumber %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+
+
+  <%- include('partials/foot') -%>

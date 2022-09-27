@@ -1,0 +1,90 @@
+<%- include('partials/head') -%>
+<%- include('partials/nav-bar') -%>
+
+
+<main>
+  <div class="container my-3">
+    <section class="container">
+      <div class="text-center fs-3 link-dark">
+        <a href="/dashboard/all-projects" class="btn btn-primary">All Projects</a>
+        <a href="/dashboard/my-projects" class="btn btn-primary">My Projects</a>
+        <a href="/dashboard/closed-projects" class="btn btn-primary">Closed Projects</a>
+        <a href="/dashboard/addproject" class="btn btn-primary">Add Project</a>
+      </div>
+    </section>
+  </div>
+
+  <section class="container">
+    <table class="table table-hover mt-4">
+      <thead class="table-header table-dark">
+        <th scope="col"><a href="/sort-by-client" class="text-light text-decoration-none">Client</a></th>
+        <th scope="col"><a href="/sort-by-leader" class="text-light text-decoration-none">Leader</a></th>
+        <th scope="col">Next Step</th>
+        <th scope="col"><a href="/sort-by-date" class="text-light text-decoration-none">Scheduled Date</a></th>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="/client" class="text-dark text-decoration-none">Angela Jackson</a></td>
+        <td><a href="/profile" class="text-dark text-decoration-none">Peter Jackson</a></td>
+        <td><a href="/client#next-step" class="text-dark text-decoration-none">Phone call</a></td>
+        <td>05/12/2022</td>
+      </tr>
+      <tr>
+        <td>Robert Morrill</td>
+        <td>Lorena Mason</td>
+        <td>Process financing</td>
+        <td>05/11/2022</td>
+      </tr>
+      <tr>
+        <td>John Gomer</td>
+        <td>Nathan Herrera</td>
+        <td>Perform install</td>
+        <td>05/10/2022</td>
+      </tr>
+      <tr>
+        <td>James Price</td>
+        <td>Peter Jackson</td>
+        <td>Process payment</td>
+        <td>05/08/2022</td>
+      </tr>
+    </tbody>
+    </table>
+  </section>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="container">
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<projects.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/project/<%= projects[i]._id%>">
+              <img class="img-fluid" src="<%= projects[i].image%>">
+            </a>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>   -->
+<%- include('partials/foot') -%>

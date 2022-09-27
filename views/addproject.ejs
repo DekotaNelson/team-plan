@@ -1,0 +1,43 @@
+<%- include('partials/head') -%>
+<%- include('partials/nav-bar') -%>
+
+<main class="container">
+  <section class="row justify-content-center my-4">
+      <div class="col-8">
+            <h2>Add a project</h2>
+            <form action="/project/createProject" enctype="application/x-www-form-urlencoded" method="POST">
+              <div class="mb-3">
+                  <label for="projectName" class="form-label">Name (required)</label>
+                  <input type="text" class="form-control" id="projectName" name="projectName">
+              </div>
+              <div class="mb-3">
+                <label for="nextStep" class="form-label">Next Step (required)</label>
+                <input type="text" class="form-control" id="nextStep" name="nextStep">
+            </div>
+              <div class="mb-3">
+                <label for="notes" class="form-label">Notes</label>
+                <textarea class="form-control" id="notes" name="notes"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="materials" class="form-label">Materials</label>
+                <textarea class="form-control" id="materials" name="materials"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="paymentInfo" class="form-label">Payment Info</label>
+                <input type="text" class="form-control" id="paymentInfo" name="paymentInfo">
+                </div>
+                <div class="mb-3">
+                    <label for="schedule" class="form-label">Schedule</label>
+                    <input type="text" class="form-control" id="schedule" name="schedule">
+                </div>
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>  
+    </div>
+  </section>
+</main>
+
+
+
+<%- include('partials/foot') -%>

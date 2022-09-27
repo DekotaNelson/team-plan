@@ -1,0 +1,35 @@
+/* Colors */
+.theme-dark-bg{ background-color: #1a1815; }
+.theme-light-bg{ background-color: #cfe8f3; }
+.theme-green-bg{ background-color: #009849; }
+.theme-primary-bg{ background-color: #002d35; }
+.theme-secondary-bg{ background-color: #de2957; }
+.theme-tertiary-bg{ background-color: #802d89; }
+
+/* Misc */
+.w-fit-content{
+  width: fit-content;
+}
+
+.w-max-content{
+  width: max-content;
+}
+
+.min-w-100{
+    min-width: 100%;
+}
+
+.min-w-250{
+  min-width: 250px;
+}
+
+.margin-auto{
+  margin: auto;
+}
+
+.dropdown-menu-center{
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+}
