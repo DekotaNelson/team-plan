@@ -7,9 +7,9 @@
     <section class="container">
       <div class="text-center fs-3 link-dark">
         <a href="/dashboard/all-projects" class="btn btn-primary">All Projects</a>
-        <a href="/dashboard/my-projects" class="btn btn-primary">My Projects</a>
+        <a href="/dashboard/my-projects" class="btn btn-primary">Open Projects</a>
         <a href="/dashboard/closed-projects" class="btn btn-primary">Closed Projects</a>
-        <a href="/dashboard/addproject" class="btn btn-primary">Add Project</a>
+        <a href="/project/addproject" class="btn btn-primary">Add Project</a>
       </div>
     </section>
   </div>
@@ -18,35 +18,73 @@
     <table class="table table-hover mt-4">
       <thead class="table-header table-dark">
         <th scope="col"><a href="/sort-by-client" class="text-light text-decoration-none">Client</a></th>
-        <th scope="col"><a href="/sort-by-leader" class="text-light text-decoration-none">Leader</a></th>
+        <th scope="col"><a href="/sort-by-leader" class="text-light text-decoration-none">Project Total</a></th>
         <th scope="col">Next Step</th>
         <th scope="col"><a href="/sort-by-date" class="text-light text-decoration-none">Scheduled Date</a></th>
+        <th scope="col"></th>
       </thead>
       <tbody>
-      <tr>
+      <!-- <tr>
         <td><a href="/client" class="text-dark text-decoration-none">Angela Jackson</a></td>
         <td><a href="/profile" class="text-dark text-decoration-none">Peter Jackson</a></td>
         <td><a href="/client#next-step" class="text-dark text-decoration-none">Phone call</a></td>
         <td>05/12/2022</td>
+      </tr> -->
+      <tr>
+        <td><a href="/client" class="text-dark text-decoration-none">Mr. Jackson</a></td>
+        <td>$9,000</td>
+        <td>Phone call</td>
+        <td>07/12/2022</td>
+        <td class="d-md-flex justify-content-end">
+          <a href="/dashboard/all-projects" class="btn btn-primary btn-sm me-3">Complete</a>
+          <a href="/dashboard/all-projects" class="btn btn-primary btn-sm me-2">Delete</a>
+        </td>
       </tr>
       <tr>
         <td>Robert Morrill</td>
-        <td>Lorena Mason</td>
+        <td>$6800</td>
         <td>Process financing</td>
-        <td>05/11/2022</td>
+        <td>07/11/2022</td>
+        <td class="d-md-flex justify-content-end">
+          <a href="/dashboard/all-projects" class="btn btn-primary btn-sm me-3">Complete</a>
+          <a href="/dashboard/all-projects" class="btn btn-primary btn-sm me-2">Delete</a>
+        </td>
       </tr>
       <tr>
         <td>John Gomer</td>
-        <td>Nathan Herrera</td>
+        <td>$11,000</td>
         <td>Perform install</td>
-        <td>05/10/2022</td>
+        <td>07/10/2022</td>
+        <td class="d-md-flex justify-content-end">
+          <a href="/dashboard/all-projects" class="btn btn-primary btn-sm me-3">Complete</a>
+          <a href="/dashboard/all-projects" class="btn btn-primary btn-sm me-2">Delete</a>
+        </td>
       </tr>
       <tr>
         <td>James Price</td>
-        <td>Peter Jackson</td>
+        <td>$4500</td>
         <td>Process payment</td>
-        <td>05/08/2022</td>
+        <td>07/08/2022</td>
+        <td class="d-md-flex justify-content-end">
+          <a href="/dashboard/all-projects" class="btn btn-primary btn-sm me-3">Complete</a>
+          <a href="/dashboard/all-projects" class="btn btn-primary btn-sm me-2">Delete</a>
+        </td>
       </tr>
+      <% projects.forEach( el => { %>
+        <!-- <li class='todoItem' data-id='<%=el._id%>'>
+            <span class='<%= el.completed === true ? 'completed' : 'not'%> wrapCode', ><%= decodeURIComponent(el.todo) %></span> 
+            <span class='del'> Delete </span>
+        </li> -->
+
+        <td><a href="/project/<%=el._id%>" class="text-dark text-decoration-none"><%=el.projectName%></a></td>
+        <td><%=el.projectTotal%></td>
+        <td><%=el.nextStep%></td>
+        <td><%=el.schedule%></td>
+        <td class="d-md-flex justify-content-end">
+          <a href="/dashboard/all-projects" class="btn btn-primary btn-sm me-3">Complete</a>
+          <a href="/dashboard/all-projects" class="btn btn-primary btn-sm me-2">Delete</a>
+        </td>
+      <% }) %>  
     </tbody>
     </table>
   </section>

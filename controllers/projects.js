@@ -6,6 +6,7 @@ module.exports = {
   getDashboard: async (req, res) => {
     try {
       const projects = await Project.find().sort({ createdAt: "desc" }).lean();
+      console.log(projects)
       res.render("dashboard.ejs", { projects: projects });
     } catch (err) {
       console.log(err);
@@ -14,6 +15,7 @@ module.exports = {
   getProject: async (req, res) => {
     try {
       const project = await Project.findById(req.params.id);
+      console.log(project)
       res.render("project.ejs", { project: project, user: req.user });
     } catch (err) {
       console.log(err);
@@ -32,10 +34,11 @@ module.exports = {
 
       await Project.create({
         projectName: req.body.projectName,
+        projectTotal: req.body.projectTotal,
         nextStep: req.body.nextStep,
         notes: req.body.notes,
         meterials: req.body.meterials,
-        paymentInfo: req.body.paymentInfo,
+        // paymentInfo: req.body.paymentInfo,
         schedule: req.body.schedule,
         leader: req.user.id,
         team: req.user.team || req.user.id,

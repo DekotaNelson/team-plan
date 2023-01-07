@@ -1,0 +1,153 @@
+<%- include('partials/head') -%>
+<%- include('partials/nav-bar') -%>
+
+<main>
+  <div class="container my-3">
+    <section class="container">
+      <div class="text-center fs-3 link-dark">
+        <a href="/dashboard/all-projects" class="btn btn-primary">Mark Complete</a>
+        <a href="/dashboard/my-projects" class="btn btn-primary">Delete Project</a>
+        <a href="/dashboard/closed-projects" class="btn btn-primary">Edit Project</a>
+      </div>
+    </section>
+  </div>
+
+ <section class="container my-5">
+    <table class="table table-hover mt-4">
+      <thead class="table-header table-dark">
+        <th scope="col"><a href="/sort-by-client" class="text-light text-decoration-none">Client</a></th>
+        <th scope="col"><a href="/sort-by-leader" class="text-light text-decoration-none">Project Total</a></th>
+        <th scope="col">Next Step</th>
+        <th scope="col"><a href="/sort-by-date" class="text-light text-decoration-none">Scheduled Date</a></th>
+      </thead>
+      <tbody>
+        <% for(var i=0; i<project.length; i++) {%>
+          <tr>
+              <td class="text-dark text-decoration-none"><%= project.projectName %></td>
+              <td><%= project.leader %></td>
+              <td><%= project.nextStep %></td>
+              <td><%= project.schedule %></td>
+          </tr>
+      <% } %>
+        <tr>
+        <td><a href="/project/<%=project._id%>" class="text-dark text-decoration-none"><%=project.projectName%></a></td>
+        <td><%=project.projectTotal%></td>
+        <td><%=project.nextStep%></td>
+        <td><%=project.schedule%></td>
+    </tr>  
+    </tbody>
+    </table>
+  </section>
+
+  <div class="container row border-top border-dark py-5 margin-auto">
+    <section class="col d-flex flex-column align-items-center min-w-250  border-end border-dark">
+      <div class="col d-flex flex-column text-center fs-3">
+        <h3>Notes</h3>
+        <div class="container d-flex justify-content-center">
+          <div class="dropdown">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" aria-expanded="false">
+              Add Notes
+            </a>
+            <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuClickableInside">
+            <form class="w-max-content px-4 py-3" action="/updateProfile" method="POST">
+              <h3>Add Note(s)</h3>
+                <div class="my-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                  <label for="phoneNumber" class="form-label">Phone Number</label>
+                  <input type="text" class="form-control" id="phoneNumber" name="phoneNumber">
+                </div>
+                <div class="mb-3">
+                  <label for="role" class="form-label">Role</label>
+                  <input type="text" class="form-control" id="role" name="role">
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+            </ul>
+          </div>
+        </div>
+        <p class="fs-6 mt-3">
+          <%= project.notes %>
+        </p>
+      </div>
+    </section>
+
+    <section class="col d-flex flex-column align-items-center min-w-250">
+      <div class="col text-center">
+        <h3 class="">Materials</h3>
+        <div class="container d-flex justify-content-center mt-3">
+          <div class="dropdown">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" aria-expanded="false">
+              Add Materials
+            </a>
+            <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuClickableInside">
+            <form class="w-max-content px-4 py-3" action="/updateProfile" method="POST">
+              <h3>Add Materials</h3>
+                <div class="my-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                  <label for="phoneNumber" class="form-label">Phone Number</label>
+                  <input type="text" class="form-control" id="phoneNumber" name="phoneNumber">
+                </div>
+                <div class="mb-3">
+                  <label for="role" class="form-label">Role</label>
+                  <input type="text" class="form-control" id="role" name="role">
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+            </ul>
+          </div>
+        </div>
+        <p class="fs-6 mt-3">
+          <%= project.materials %>
+        </p>
+      </div>
+    </section>
+  </div>
+</main>
+
+
+
+<!-- <div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+          <div class="mt-5">
+            <h2>Add a project</h2>
+            <form action="/project/createProject" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="title" name="title">
+              </div>
+              <div class="mb-3">
+                <label for="caption" class="form-label">Caption</label>
+                <textarea class="form-control" id="caption" name="caption"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              </div>
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+      <div class="col-6">
+        <ul class="row list-unstyled">
+        
+        </ul>
+        <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary" href="/dashboard">Return to Dashboard</a>
+        </div>  
+      </div>  
+    </div>
+  </div>
+</div> -->
+<%- include('partials/foot') -%>

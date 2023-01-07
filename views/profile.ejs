@@ -97,10 +97,10 @@
       <tbody>
         <% for(var i=0; i<projects.length; i++) {%>
           <tr>
-              <td><a href="/profile/<%= projects[i]._id%>" class="text-dark text-decoration-none"><%= project.projectName %></a></td>
-              <td><%= project.leader %></td>
-              <td><%= project.nextStep %></td>
-              <td><%= project.schedule %></td>
+              <td><a href="/profile/<%= projects[i]._id%>" class="text-dark text-decoration-none"><%= projects.projectName %></a></td>
+              <td><%= projects.leader %></td>
+              <td><%= projects.nextStep %></td>
+              <td><%= projects.schedule %></td>
           </tr>
       <% } %>
       <tr>

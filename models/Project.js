@@ -5,6 +5,10 @@ const ProjectSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  projectTotal: {
+    type: String,
+    require: false,
+  },
   nextStep: {
     type: String,
     require: true,
