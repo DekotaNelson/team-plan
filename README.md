@@ -1,6 +1,10 @@
 # Team Plan
 Effortlessly manage all of your projects with our intuitive project planning app. Keep track of deadlines, notes, materials, and other critical information all at your fingertips. Collaborate with your team in real time and watch your projects come to life. Our user-friendly interface and powerful features make it easy to stay organized and get things done. Say goodbye to the stress of project management and hello to success with Team Plan.
 
+<p align="center">
+  <img src="https://media.giphy.com/media/br10PhHgMfxj3qZo67/giphy.gif" alt="Live Demo gif" />
+</p>
+
 Link to live demo of project: https://teamplan.cyclic.app/
 
 # How It's Made:
