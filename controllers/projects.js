@@ -24,7 +24,7 @@ module.exports = {
   getAddProject: async (req, res) => {
     try {
       
-      res.render("addProject.ejs");
+      res.render("addproject.ejs");
     } catch (err) {
       console.log(err);
     }
